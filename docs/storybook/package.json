@@ -1,0 +1,25 @@
+{
+  "name": "ui-storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "keywords": [],
+  "author": "Dustin Delatore <dustin@delatore.me> (https://whosdustin.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/svelte": "^6.3.4",
+    "babel-loader": "^8.2.2",
+    "svelte": "^3.38.3",
+    "svelte-loader": "^3.1.2"
+  },
+  "dependencies": {"svelte-ui":"~1.0.0"}
+}

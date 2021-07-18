@@ -1,12 +1,19 @@
 {
-  "name": "svelte-app",
+  "name": "svelte-ui",
   "version": "1.0.0",
   "private": true,
+  "svelte": "dist/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
@@ -18,6 +25,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.0"
+    "sirv-cli": "^1.0.0",
+    "monaco-editor": "0.26.1"
   }
 }
