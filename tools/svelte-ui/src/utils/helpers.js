@@ -1,0 +1,1 @@
+export const be = (value, form = 'is') =>  value ? `${form}-${value}` : '';

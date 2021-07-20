@@ -1,10 +1,10 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { EditorCode } from 'svelte-ui';
+  import { EditorCode } from '../../../tools/svelte-ui/dist';
 </script>
 
 <Meta 
-  title="Core/EditorCode"
+  title="Components/EditorCode"
   component={EditorCode}
 />
 

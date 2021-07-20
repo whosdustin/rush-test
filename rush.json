@@ -391,11 +391,11 @@
   "projects": [
     {
       "packageName": "svelte-ui",
-      "projectFolder": "tools/ui",
+      "projectFolder": "tools/svelte-ui",
       "reviewCategory": "shared"
     },
     {
-      "packageName": "ui-storybook",
+      "packageName": "svelte-ui-storybook",
       "projectFolder": "docs/storybook"
     }
     // {

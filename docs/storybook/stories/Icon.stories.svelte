@@ -1,13 +1,13 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "svelte-ui";
+  import { Icon } from "svelte-ui";
 </script>
 
 <Meta
-  title="Elements/Button"
-  component={Button}
+  title="Elements/Icon"
+  component={Icon}
   argTypes={{
-    label: { control: "text" },
+    name: { control: "text" },
     color: { 
       control: { 
         type: "select", 
@@ -37,27 +37,16 @@
         ]
       },
     },
-    is_light: {
-      control: { type: "boolean" }
-    },
-    is_outlined: {
-      control: { type: "boolean" }
-    },
-    is_transparent: {
-      control: { type: "boolean" }
-    },
-    click: { action: "click" },
   }}
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.click} />
+  <Icon {...args} />
 </Template>
 
 <Story
   name="Default"
   args={{
-    primary: true,
-    label: "Button",
+    name: 'fas fa-home',
   }}
 />
