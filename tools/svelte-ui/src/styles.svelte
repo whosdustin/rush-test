@@ -1,9 +1,9 @@
+<script>
+  import '@fortawesome/fontawesome-free/js/all'
+</script>
+
 <style lang="scss" global>
   // Set Variables Here
-  $fa-font-path: "./assets/webfonts";
-  
-  // Fonts
-  @import "@fortawesome/fontawesome-free/scss/fontawesome";
   
   // Bulma Base Imports
   @import "bulma/sass/utilities/_all";

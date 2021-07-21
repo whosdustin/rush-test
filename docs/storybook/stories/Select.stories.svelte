@@ -7,36 +7,25 @@
   title="Form/Select"
   component={Select}
   argTypes={{
-    options: {
-      control: "array",
-      defaultValue: [
-        { value: 1, label: 'First' },
-        { value: 2, label: 'Second' },
-        { value: 3, label: 'Third' }
+    options: { control: "array" },
+    size: {
+      control: "select",
+      options: [
+        "small",
+        "medium",
+        "large"
       ]
     },
-    size: {
-      control: {
-        type: "select",
-        options: [
-          "small",
-          "medium",
-          "large"
-        ]
-      },
-    },
     color: { 
-      control: { 
-        type: "select", 
-        options: [
-          'primary',
-          'success',
-          'warning',
-          'danger',
-          'info',
-          'link'
-        ]
-      },
+      control: "select", 
+      options: [
+        'primary',
+        'success',
+        'warning',
+        'danger',
+        'info',
+        'link'
+      ]
     },
     is_rounded: { control: "boolean" },
     multiple_size: { control: "number" },

@@ -3,9 +3,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
-import preprocess, {sass} from 'svelte-preprocess';
+import preprocess from 'svelte-preprocess';
 import css from 'rollup-plugin-css-only';
-import copy from 'rollup-plugin-copy';
 import alias from '@rollup/plugin-alias';
 import pkg from "./package.json";
 import path from "path";
@@ -36,14 +35,12 @@ export default {
 		]
 	},
 	plugins: [
+		alias({
+			entries: { '@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome') }
+		}),
 		svelte({
 			preprocess: preprocess(),
 			emitCss: true
-		}),
-		copy({
-			targets: [
-				{ src: './src/assets/**/*', dest: './dist/assets' }
-			]
 		}),
 		css({ output: 'svelte-ui.css' }),
 		json(),

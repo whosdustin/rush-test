@@ -7,19 +7,14 @@
   title="Components/Pagination"
   component={Pagination}
   argTypes={{
-    length: {
-      control: "number",
-      defaultValue: 10
-    },
+    length: { control: "number" },
     size: {
-      control: {
-        type: "select",
-        options: [
-          "small",
-          "medium",
-          "large"
-        ]
-      },
+      control: "select",
+      options: [
+        "small",
+        "medium",
+        "large"
+      ]
     },
     is_rounded: { control: "boolean" },
     next: { action: "next" },

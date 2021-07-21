@@ -9,35 +9,31 @@
   argTypes={{
     label: { control: "text" },
     color: { 
-      control: { 
-        type: "select", 
-        options: [
-          'primary',
-          'success',
-          'warning',
-          'danger',
-          'info',
-          'link',
-          'white',
-          'light',
-          'dark',
-          'black',
-          'text'
-        ]
-      },
+      control: "select",
+      options: [
+        'primary',
+        'success',
+        'warning',
+        'danger',
+        'info',
+        'link',
+        'white',
+        'light',
+        'dark',
+        'black',
+        'text'
+      ]
     },
     size: {
-      control: {
-        type: "select",
-        options: [
-          "small",
-          "normal",
-          "medium",
-          "large"
-        ]
-      },
+      control: "select",
+      options: [
+        "small",
+        "normal",
+        "medium",
+        "large"
+      ]
     },
-    is_light: { control: "boolean" },
+    is_light: { control:  "boolean" },
     is_outlined: { control: "boolean" },
     is_transparent: { control: "boolean" },
     click: { action: "click" },

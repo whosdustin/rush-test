@@ -9,6 +9,8 @@ export { default as EditorCode } from './components/editor-code.svelte'
 // Form
 export { default as Select } from './form/select.svelte'
 export { default as Input } from './form/input.svelte'
+export { default as Textarea } from './form/textarea.svelte'
+export { default as Control } from './form/control.svelte'
 
 // Styles
 export { default as Styles } from './styles.svelte'

@@ -9,12 +9,11 @@
   export let value = ''
   export let color
   export let size
-  export let is_rounded
-  export let type = 'text'
+  export let rows
   export let placeholder
   export let disabled = false
   export let readonly = false
-  export let is_static
+  export let has_fixed_size = false
   export let debounce = 750
 
   const state$ = new Subject().pipe(debounceTime(debounce))
@@ -26,15 +25,14 @@
 
   $: size_class = be(size)
   $: color_class = be(color)
-  $: class_list = `input ${color_class} ${size_class}`
+  $: class_list = `textarea ${color_class} ${size_class}`
 
   onDestroy(() => sub$.unsubscribe())
 </script>
 
-<input
+<textarea
   class={class_list}
-  class:is-rounded={is_rounded}
-  class:is-static={is_static}
+  class:has-fixed-size={has_fixed_size}
   on:keyup={event => state$.next(event)}
-  {value} {type} {placeholder} {disabled} {readonly}
-/>
+  {value} {rows} {placeholder} {disabled} {readonly}
+></textarea>

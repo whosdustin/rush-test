@@ -1,14 +1,15 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Input, Control } from "svelte-ui";
+  import { Textarea, Control } from "svelte-ui";
 </script>
 
 <Meta
-  title="Form/Input"
-  component={Input, Control}
+  title="Form/Textarea"
+  component={Textarea, Control}
   argTypes={{
+    rows: { control: "number" },
     color: { 
-      control: "select", 
+      control: "select",
       options: [
         'primary',
         'success',
@@ -30,7 +31,7 @@
     placeholder: { control: "text" },
     disabled: { control: "boolean" },
     readonly: { control: "boolean" },
-    is_static: { control: "boolean" },
+    has_fixed_size: { control: "boolean" },
     input: { action: "input" }
   }}
 />
@@ -39,17 +40,17 @@
   <Control
     is_loading={args.is_loading}
     size={args.size}>
-    <Input {...args} on:input={args.input} />
+    <Textarea {...args} on:input={args.input} />
   </Control>
 </Template>
 
 <Story
   name="Default"
   args={{
-    placeholder: 'Text Input',
+    placeholder: 'Textarea Input',
     disabled: false,
     readonly: false,
-    is_static: false,
+    has_fixed_size: false,
     is_loading: false
   }}
 />

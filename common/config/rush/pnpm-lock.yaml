@@ -21,7 +21,6 @@ specifiers:
   monaco-themes: ~0.3.3
   node-sass: ~6.0.1
   rollup: ^2.3.4
-  rollup-plugin-copy: ~3.4.0
   rollup-plugin-css-only: ~3.1.0
   rollup-plugin-svelte: ^7.0.0
   rollup-plugin-terser: ^7.0.0
@@ -50,7 +49,6 @@ dependencies:
   monaco-themes: 0.3.3
   node-sass: 6.0.1
   rollup: 2.53.2
-  rollup-plugin-copy: 3.4.0
   rollup-plugin-css-only: 3.1.0_rollup@2.53.2
   rollup-plugin-svelte: 7.1.0_rollup@2.53.2
   rollup-plugin-terser: 7.0.2_rollup@2.53.2
@@ -10138,6 +10136,12 @@ packages:
       aproba: 1.2.0
     dev: false
 
+  /rxjs/7.2.0:
+    resolution: {integrity: sha512-aX8w9OpKrQmiPKfT1bqETtUr9JygIz6GZ+gql8v7CijClsP0laoFUdKzxFAoWuRdSlOdU2+crss+cMf+cqMTnw==}
+    dependencies:
+      tslib: 2.1.0
+    dev: false
+
   /sade/1.7.4:
     resolution: {integrity: sha512-y5yauMD93rX840MwUJr7C1ysLFBgMspsdTo4UVrDg3fXDvtwOyIqykhVAAm6fk/3au77773itJStObgK+LKaiA==}
     engines: {node: '>= 6'}
@@ -10938,7 +10942,7 @@ packages:
       strip-indent: 3.0.0
     dev: false
 
-  /svelte-preprocess/4.7.4_80e2a2f6462f7acd2ae9d53cf907734c:
+  /svelte-preprocess/4.7.4_6ccc96ef45cf08655af73d466cb745f0:
     resolution: {integrity: sha512-mDAmaltQl6e5zU2VEtoWEf7eLTfuOTGr9zt+BpA3AGHo8MIhKiNSPE9OLTCTOMgj0vj/uL9QBbaNmpG4G1CgIA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -10984,7 +10988,6 @@ packages:
       '@types/sass': 1.16.1
       detect-indent: 6.1.0
       node-sass: 6.0.1
-      sass: 1.35.2
       strip-indent: 3.0.0
       svelte: 3.38.3
     dev: false
@@ -11260,6 +11263,10 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+    dev: false
+
+  /tslib/2.1.0:
+    resolution: {integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==}
     dev: false
 
   /tslib/2.3.0:
@@ -11994,7 +12001,7 @@ packages:
     dev: false
 
   file:projects/svelte-ui.tgz_@babel+core@7.14.6:
-    resolution: {integrity: sha512-aTJrhl/ctQnqP3u4dvaXldb2WvZDGYjQUrZ2H499ngu0BM9Eu7lMsha6tlDf9iSJNG9oHY2QSArFueRbqJPZfg==, tarball: file:projects/svelte-ui.tgz}
+    resolution: {integrity: sha512-PQqVrMjOXl8hmg/f9fTKA3hGbHY9puhaeepG9L4YiywjEm2VhPM0BMnaPjMiMr27GWeeqjj/R4KcWYh1twcXgQ==, tarball: file:projects/svelte-ui.tgz}
     id: file:projects/svelte-ui.tgz
     name: '@rush-temp/svelte-ui'
     version: 0.0.0
@@ -12014,10 +12021,11 @@ packages:
       rollup-plugin-css-only: 3.1.0_rollup@2.53.2
       rollup-plugin-svelte: 7.1.0_rollup@2.53.2+svelte@3.38.3
       rollup-plugin-terser: 7.0.2_rollup@2.53.2
+      rxjs: 7.2.0
       sass: 1.35.2
       sirv-cli: 1.0.12
       svelte: 3.38.3
-      svelte-preprocess: 4.7.4_80e2a2f6462f7acd2ae9d53cf907734c
+      svelte-preprocess: 4.7.4_6ccc96ef45cf08655af73d466cb745f0
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -12025,6 +12033,7 @@ packages:
       - postcss
       - postcss-load-config
       - pug
+      - sass
       - stylus
       - sugarss
       - typescript

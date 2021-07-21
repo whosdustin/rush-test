@@ -9,33 +9,29 @@
   argTypes={{
     name: { control: "text" },
     color: { 
-      control: { 
-        type: "select", 
-        options: [
-          'primary',
-          'success',
-          'warning',
-          'danger',
-          'info',
-          'link',
-          'white',
-          'light',
-          'dark',
-          'black',
-          'text'
-        ]
-      },
+      control: "select", 
+      options: [
+        'primary',
+        'success',
+        'warning',
+        'danger',
+        'info',
+        'link',
+        'white',
+        'light',
+        'dark',
+        'black',
+        'text'
+      ]
     },
     size: {
-      control: {
-        type: "select",
-        options: [
-          "small",
-          "normal",
-          "medium",
-          "large"
-        ]
-      },
+      control: "select",
+      options: [
+        "small",
+        "normal",
+        "medium",
+        "large"
+      ]
     },
   }}
 />

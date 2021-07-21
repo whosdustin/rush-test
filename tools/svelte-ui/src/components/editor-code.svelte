@@ -1,18 +1,27 @@
 <script>
   import { onMount, onDestroy, createEventDispatcher } from 'svelte'
+  import { Subject } from "rxjs";
+  import { debounceTime } from "rxjs/operators";
   import loader from '@monaco-editor/loader'
 
-  export let value
+  const dispatch = createEventDispatcher()
+
+  export let value = ''
   export let theme = 'vs-dark'
-  export let fontSize = 16
+  export let font_size = 16
   export let language = 'javascript'
+  export let has_ligatures = true
+  export let debounce = 750
 
   let editor
-  const dispatch = createEventDispatcher();
+  const state$ = new Subject().pipe(debounceTime(debounce))
 
-  onMount(mountEditor)
+  const sub$ = state$.subscribe($$value => {
+    value = $$value
+    dispatch('change', value)
+  })
 
-  async function mountEditor() {
+  onMount(async () => {
     const monaco = await loader.init()
 
     editor = monaco.editor.create(
@@ -20,25 +29,25 @@
       theme,
       value,
       language,
-      fontSize,
-      fontLigatures: true
+      fontSize: font_size,
+      fontLigatures: has_ligatures
     })
 
     editor.onDidChangeModelContent(event => {
-      dispatch('change', editor.getValue())
+      state$.next(editor.getValue())
     })
-  }
+  })
 
   onDestroy(() => {
     if (editor) editor.dispose()
+    sub$.unsubscribe()
   })
 </script>
 
 <style>
   #monaco-container {
-    height: 100vh;
+    height: calc(100vh - 30px);
     width: 100%;
-    font-size:2em;
   }
 </style>
 
