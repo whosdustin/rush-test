@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { EditorCode } from '../../../tools/svelte-ui/dist';
+  import { EditorCode } from 'svelte-ui';
 </script>
 
 <Meta 

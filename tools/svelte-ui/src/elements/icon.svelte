@@ -1,5 +1,5 @@
 <script>
-  import { be } from './utils/helpers'
+  import { be } from '../utils/helpers'
 
   export let name
   export let color

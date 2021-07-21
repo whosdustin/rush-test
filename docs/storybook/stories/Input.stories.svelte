@@ -1,13 +1,12 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "svelte-ui";
+  import { Input } from "svelte-ui";
 </script>
 
 <Meta
-  title="Elements/Button"
-  component={Button}
+  title="Form/Input"
+  component={Input}
   argTypes={{
-    label: { control: "text" },
     color: { 
       control: { 
         type: "select", 
@@ -17,12 +16,7 @@
           'warning',
           'danger',
           'info',
-          'link',
-          'white',
-          'light',
-          'dark',
-          'black',
-          'text'
+          'link'
         ]
       },
     },
@@ -31,29 +25,28 @@
         type: "select",
         options: [
           "small",
-          "normal",
           "medium",
           "large"
         ]
       },
     },
-    is_light: { control: "boolean" },
-    is_outlined: { control: "boolean" },
-    is_transparent: { control: "boolean" },
-    click: { action: "click" },
+    placeholder: { control: "text" },
+    disabled: { control: "boolean" },
+    readonly: { control: "boolean" },
+    is_static: { control: "boolean" }
   }}
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.click} />
+  <Input {...args} />
 </Template>
 
 <Story
   name="Default"
   args={{
-    label: "Button",
-    is_light: false,
-    is_outlined: false,
-    is_transparent: false,
+    placeholder: 'Text Input',
+    disabled: false,
+    readonly: false,
+    is_static: false
   }}
 />

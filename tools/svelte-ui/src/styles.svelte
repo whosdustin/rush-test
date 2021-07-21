@@ -1,11 +1,17 @@
 <style lang="scss" global>
   // Set Variables Here
-
-  // Fonts
   $fa-font-path: "./assets/webfonts";
-  @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+  
+  // Fonts
+  @import "@fortawesome/fontawesome-free/scss/fontawesome";
   
   // Bulma Base Imports
-  @import "../node_modules/bulma/sass/utilities/_all";
-  @import "../node_modules/bulma/sass/base/_all";
+  @import "bulma/sass/utilities/_all";
+  @import "bulma/sass/base/_all";
+  @import "bulma/sass/elements/_all";
+  @import "bulma/sass/form/_all";
+  @import "bulma/sass/components/_all";
+  @import "bulma/sass/grid/_all";
+  @import "bulma/sass/helpers/_all";
+  @import "bulma/sass/layout/_all";
 </style>

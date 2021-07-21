@@ -3,10 +3,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
-import preprocess from 'svelte-preprocess';
+import preprocess, {sass} from 'svelte-preprocess';
 import css from 'rollup-plugin-css-only';
 import copy from 'rollup-plugin-copy';
+import alias from '@rollup/plugin-alias';
 import pkg from "./package.json";
+import path from "path";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -45,7 +47,10 @@ export default {
 		}),
 		css({ output: 'svelte-ui.css' }),
 		json(),
-		resolve(),
+		resolve({
+      browser: true,
+      dedupe: ["svelte"],
+    }),
 		commonjs(),
 		production && terser()
 	],

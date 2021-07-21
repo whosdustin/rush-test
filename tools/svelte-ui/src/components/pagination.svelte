@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  import { be } from './utils/helpers';
+  import { be } from '../utils/helpers';
 
   const dispatch = createEventDispatcher()
 
@@ -54,8 +54,8 @@
 </script>
 
 <style lang="scss" global>
-  @import "../node_modules/bulma/sass/utilities/_all";
-  @import "../node_modules/bulma/sass/components/pagination";
+  @import "bulma/sass/utilities/_all";
+  @import "bulma/sass/components/pagination";
 </style>
 
 <nav

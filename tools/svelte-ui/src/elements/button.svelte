@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { be } from './utils/helpers';
+  import { be } from '../utils/helpers';
   
   const dispatch = createEventDispatcher();
 
@@ -18,11 +18,6 @@
   $: class_list = `button ${color_class} ${size_class}`
 
 </script>
-
-<style lang="scss" global>
-  @import "../node_modules/bulma/sass/utilities/_all";
-  @import "../node_modules/bulma/sass/elements/button";
-</style>
 
 <button
   type="button"
