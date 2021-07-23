@@ -1,15 +1,13 @@
 <script>
-  import { be } from "../utils/helpers";
+  import { is } from "../utils/helpers";
 
   export let size
-  export let is_loading
+  export let loading
 
-  $: size_class = be(size)
-  $: class_list = `control ${size_class}`
+  $: modifiers = is(size).is(loading).done()
+  $: class_list = `control ${modifiers}`
 </script>
 
-<div
-  class={class_list}
-  class:is-loading={is_loading}>
+<div class={class_list}>
   <slot/>
 </div>

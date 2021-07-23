@@ -2,7 +2,7 @@
   import { onDestroy, createEventDispatcher } from "svelte";
   import { Subject } from "rxjs";
   import { debounceTime } from "rxjs/operators";
-  import { be } from "../utils/helpers";
+  import { is } from "../utils/helpers";
 
   const dispatch = createEventDispatcher()
 
@@ -23,9 +23,8 @@
     dispatch('input', value)
   })
 
-  $: size_class = be(size)
-  $: color_class = be(color)
-  $: class_list = `textarea ${color_class} ${size_class}`
+  $: modifiers = is(color).is(size).done()
+  $: class_list = `textarea ${modifiers}`
 
   onDestroy(() => sub$.unsubscribe())
 </script>

@@ -1,11 +1,11 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Input, Control } from "svelte-ui";
+  import { Input, Control, Label, Field } from "svelte-ui";
 </script>
 
 <Meta
   title="Form/Input"
-  component={Input, Control}
+  component={Input, Control, Label, Field}
   argTypes={{
     color: { 
       control: "select", 
@@ -36,11 +36,15 @@
 />
 
 <Template let:args>
-  <Control
-    is_loading={args.is_loading}
-    size={args.size}>
-    <Input {...args} on:input={args.input} />
-  </Control>
+  <Field>
+    <Label for="name" slot="label">Input</Label>
+    <Control
+      slot="control"
+      loading={args.loading}
+      size={args.size}>
+      <Input {...args} on:input={args.input} />
+    </Control>
+  </Field>
 </Template>
 
 <Story
@@ -50,6 +54,6 @@
     disabled: false,
     readonly: false,
     is_static: false,
-    is_loading: false
+    loading: false
   }}
 />

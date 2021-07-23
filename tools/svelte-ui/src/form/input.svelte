@@ -2,19 +2,20 @@
   import { onDestroy, createEventDispatcher } from "svelte";
   import { Subject } from "rxjs";
   import { debounceTime } from "rxjs/operators";
-  import { be } from "../utils/helpers";
+  import { is } from "../utils/helpers";
 
   const dispatch = createEventDispatcher()
 
+  export let id
   export let value = ''
   export let color
   export let size
   export let is_rounded
+  export let is_static
   export let type = 'text'
   export let placeholder
   export let disabled = false
   export let readonly = false
-  export let is_static
   export let debounce = 750
 
   const state$ = new Subject().pipe(debounceTime(debounce))
@@ -24,9 +25,8 @@
     dispatch('input', value)
   })
 
-  $: size_class = be(size)
-  $: color_class = be(color)
-  $: class_list = `input ${color_class} ${size_class}`
+  $: modifiers = is(color).is(size).done()
+  $: class_list = `input ${modifiers}`
 
   onDestroy(() => sub$.unsubscribe())
 </script>
@@ -36,5 +36,5 @@
   class:is-rounded={is_rounded}
   class:is-static={is_static}
   on:keyup={event => state$.next(event)}
-  {value} {type} {placeholder} {disabled} {readonly}
+  {id} {value} {type} {placeholder} {disabled} {readonly}
 />

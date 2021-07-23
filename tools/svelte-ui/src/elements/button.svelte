@@ -1,22 +1,16 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-  import { be } from '../utils/helpers';
-  
-  const dispatch = createEventDispatcher();
+  import { is } from '../utils/helpers';
 
   export let color
-  export let size = 'normal'
+  export let size
   export let is_fullwidth
   export let is_light
   export let is_outlined
 
   export let label
 
-  $: color_class = be(color);
-  $: size_class = be(size)
-
-  $: class_list = `button ${color_class} ${size_class}`
-
+  $: modifiers = is(size).is(color).done()
+  $: class_list = `button ${modifiers}`
 </script>
 
 <button
@@ -25,6 +19,6 @@
   class:is-light={is_light}
   class:is-outlined={is_outlined}
   class:is-fullwidth={is_fullwidth}
-  on:click={() => dispatch('click')}>
-  {label}
+  on:click>
+  {label} {modifiers}
 </button>

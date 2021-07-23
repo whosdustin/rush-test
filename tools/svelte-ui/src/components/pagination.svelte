@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  import { be } from '../utils/helpers';
+  import { is } from '../utils/helpers';
 
   const dispatch = createEventDispatcher()
 
@@ -10,8 +10,8 @@
   export let is_rounded = false
 
   $: pages = Array.from({ length }, (_, i) => ++i)
-  $: size_class = be(size)
-  $: class_list = `pagination ${size_class}`
+  $: modifiers = is(size).done()
+  $: class_list = `pagination ${modifiers}`
 
   function previous() {
     if (current === 1) return
@@ -52,11 +52,6 @@
     )
   }
 </script>
-
-<style lang="scss" global>
-  @import "bulma/sass/utilities/_all";
-  @import "bulma/sass/components/pagination";
-</style>
 
 <nav
   class={class_list}

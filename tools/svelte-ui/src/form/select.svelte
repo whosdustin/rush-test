@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { be } from "../utils/helpers";
+  import { is } from "../utils/helpers";
 
   const dispatch = createEventDispatcher()
 
@@ -12,9 +12,8 @@
 
   let selected
 
-  $: color_class = be(color)
-  $: size_class = be(size)
-  $: class_list = `select ${color_class} ${size_class}`
+  $: modifiers = is(size).is(color).done()
+  $: class_list = `select ${modifiers}`
 </script>
 
 <div

@@ -46,7 +46,7 @@
 
 <style>
   #monaco-container {
-    height: calc(100vh - 30px);
+    height: 100vh;
     width: 100%;
   }
 </style>

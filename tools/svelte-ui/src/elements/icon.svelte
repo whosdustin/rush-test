@@ -1,11 +1,12 @@
 <script>
-  import { be } from '../utils/helpers'
+  import { has } from '../utils/helpers'
 
   export let name
   export let color
+  export let size
 
-  $: color_class = be(color, 'has-text')
-  $: class_list = `icon ${color_class}`
+  $: modifiers = has(color, 'text').is(size).done()
+  $: class_list = `icon ${modifiers}`
 </script>
 
 <span class={class_list}>

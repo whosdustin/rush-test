@@ -1,9 +1,11 @@
 // Elements
 export { default as Button } from './elements/button.svelte'
 export { default as Icon } from './elements/icon.svelte'
+export { default as Tag } from './elements/tag.svelte'
 
 // Components
 export { default as Pagination } from './components/pagination.svelte'
+export { default as Message } from './components/message.svelte'
 export { default as EditorCode } from './components/editor-code.svelte'
 
 // Form
@@ -11,6 +13,10 @@ export { default as Select } from './form/select.svelte'
 export { default as Input } from './form/input.svelte'
 export { default as Textarea } from './form/textarea.svelte'
 export { default as Control } from './form/control.svelte'
+export { default as Checkbox } from './form/checkbox.svelte'
+export { default as Radio } from './form/radio.svelte'
+export { default as Field } from './form/field.svelte'
+export { default as Label } from './form/label.svelte'
 
 // Styles
 export { default as Styles } from './styles.svelte'
