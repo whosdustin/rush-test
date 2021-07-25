@@ -20,5 +20,5 @@
   class:is-outlined={is_outlined}
   class:is-fullwidth={is_fullwidth}
   on:click>
-  {label} {modifiers}
+  {label}
 </button>

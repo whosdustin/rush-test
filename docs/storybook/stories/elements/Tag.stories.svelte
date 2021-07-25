@@ -34,7 +34,9 @@
       ]
     },
     is_light: { control:  "boolean" },
-    is_rounded: { control:  "boolean" }
+    is_rounded: { control:  "boolean" },
+    has_delete: { control: "boolean" },
+    click: { action: "delete" }
   }}
 />
 
@@ -49,6 +51,7 @@
   args={{
     label: "Tag",
     is_light: false,
-    is_rounded: false
+    is_rounded: false,
+    has_delete: false
   }}
 />
