@@ -1,0 +1,19 @@
+type Post {
+  title: String!
+  body: String!
+  slug: String!
+  createdAt: Time!
+  author: User
+}
+
+type User {
+  email: String!
+  posts: [Post] @relation
+}
+
+type Query {
+  allPosts: [Post!]
+  allUsers: [User!]
+  Post: Post!
+  User: User!
+}
