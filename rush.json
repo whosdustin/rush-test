@@ -397,6 +397,10 @@
     {
       "packageName": "svelte-ui-storybook",
       "projectFolder": "docs/storybook"
+    },
+    {
+      "packageName": "svelte-kit-blog",
+      "projectFolder": "apps/svelte-kit-blog"
     }
     // {
     //   /**
