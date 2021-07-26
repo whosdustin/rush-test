@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "svelte": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.mjs.js",
   "main": "./dist/index.js",
   "scripts": {
     "build": "rollup -c",
@@ -11,7 +11,7 @@
     "start": "sirv public --no-clear"
   },
   "files": [
-    "/dist"
+    "dist"
   ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",

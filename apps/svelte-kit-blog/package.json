@@ -24,14 +24,12 @@
   "dependencies": {
     "@tiptap/core": "^2.0.0-beta.83",
     "@tiptap/starter-kit": "^2.0.0-beta.79",
-    "concise-ui": "^0.2.1",
-    "concise-utils": "^1.0.0",
-    "concise.css": "^4.1.2",
     "date-fns": "^2.22.1",
     "faunadb": "^4.3.0",
     "graphql": "^15.5.1",
     "graphql-request": "^3.4.0",
     "html-entities": "^2.3.2",
-    "slugify": "^1.5.3"
+    "slugify": "^1.5.3",
+    "svelte-ui":"~1.0.0"
   }
 }

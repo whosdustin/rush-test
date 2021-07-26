@@ -16,4 +16,5 @@ type Query {
   allUsers: [User!]
   Post: Post!
   User: User!
+  postBySlug(slug: String!): [Post!]
 }

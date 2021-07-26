@@ -3,16 +3,9 @@ import { client } from '$lib/services/client'
 import { gql } from 'graphql-request'
 
 const {
-  Map,
-  Paginate,
   Collection,
-  Lambda,
   Call,
   Function,
-  Select,
-  Var,
-  Match,
-  Index,
   Update,
   Ref
 } = query
@@ -40,20 +33,22 @@ async function find_all() {
 
 async function find(slug) {
   try {
-    return await db.query(
-      Map(
-        Paginate(
-          Match(Index('post_by_slug'), slug)
-        ),
-        Lambda(
-          'postRef',
-          Call(
-            Function('GetPost'),
-            Select(['id'], Var('postRef'))
-          )
-        )
-      )
-    )
+    const query = gql`
+      query getPostBySlug($slug: String!) {
+        postBySlug(slug: $slug) {
+          data {
+            title
+            body
+            createdAt
+            author {
+              email
+            }
+          }
+        }
+      }
+    `
+    const { postBySlug } = await client.request(query, { slug })
+    return postBySlug
   } catch (error) {
     console.info({error})
   }

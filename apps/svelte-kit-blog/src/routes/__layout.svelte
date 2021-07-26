@@ -2,6 +2,7 @@
   import NavBar from '$lib/ui/navbar.svelte'
   import ProgressBar from '$lib/ui/progress-bar.svelte'
   import { navigating } from '$app/stores'
+  // import 'svelte-ui/dist/svelte-ui.css'
 
   let loading = true
 
@@ -11,11 +12,7 @@
 </script>
 
 <style lang="scss">
-  :global {
-    @import '../../node_modules/concise.css/dist/concise';
-    @import '../../node_modules/concise-ui/dist/concise-ui';
-    @import '../../node_modules/concise-utils/dist/concise-utils';
-  }
+
 </style>
 {#if loading}<ProgressBar/>{/if}
 

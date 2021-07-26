@@ -17,6 +17,7 @@
 
 <script>
   import PostForm from '$lib/ui/post-form.svelte'
+  import { Button } from 'svelte-ui'
   import { update } from '$lib/services/posts'
   import { goto } from '$app/navigation'
   
@@ -40,5 +41,5 @@
 </script>
 
 <PostForm {title} {body} on:update={onUpdate}>
-  <button class="_mtxs" on:click={saveChanges}>Update</button>
+  <Button on:click={saveChanges}>Update</Button>
 </PostForm>

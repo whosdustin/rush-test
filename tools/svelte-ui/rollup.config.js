@@ -19,16 +19,25 @@ export default {
 			format: "es",
 			sourcemap: true,
 			name: pkg.name,
-			inlineDynamicImports: true
+			inlineDynamicImports: true,
+			globals: {
+				rjxs: "rxjs",
+				loader: "@monaco-editor/loader"
+			}
 		},
 		{
 			file: pkg.main,
 			format: "umd",
 			name: pkg.name,
 			sourcemap: true,
-			inlineDynamicImports: true
+			inlineDynamicImports: true,
+			globals: {
+				rjxs: "rxjs",
+				loader: "@monaco-editor/loader"
+			}
 		},
 	],
+	external: Object.keys(pkg.dependencies),
 	watch: {
 		include: [
 			'./src/**/*.(svelte|js)'
@@ -40,7 +49,10 @@ export default {
 		}),
 		svelte({
 			preprocess: preprocess(),
-			emitCss: true
+			emitCss: true,
+			compilerOptions: {
+				generate: "ssr"
+			}
 		}),
 		css({ output: 'svelte-ui.css' }),
 		json(),
