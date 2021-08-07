@@ -22,7 +22,7 @@ export default {
 			inlineDynamicImports: true,
 			globals: {
 				rjxs: "rxjs",
-				loader: "@monaco-editor/loader"
+				loader: "@monaco-editor/loader",
 			}
 		},
 		{
@@ -45,14 +45,13 @@ export default {
 	},
 	plugins: [
 		alias({
-			entries: { '@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome') }
+			entries: {
+				'@fortawesome': path.resolve(__dirname, 'node_modules/@fortawesome')
+			}
 		}),
 		svelte({
 			preprocess: preprocess(),
-			emitCss: true,
-			compilerOptions: {
-				generate: "ssr"
-			}
+			emitCss: true
 		}),
 		css({ output: 'svelte-ui.css' }),
 		json(),
