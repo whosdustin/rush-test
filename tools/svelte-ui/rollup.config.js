@@ -56,7 +56,7 @@ export default {
 		css({ output: 'svelte-ui.css' }),
 		json(),
 		resolve({
-      browser: true,
+      browser: false,
       dedupe: ["svelte"],
     }),
 		commonjs(),

@@ -401,6 +401,10 @@
     {
       "packageName": "svelte-kit-blog",
       "projectFolder": "apps/svelte-kit-blog"
+    },
+    {
+      "packageName": "nest-test",
+      "projectFolder": "servers/nest-test"
     }
     // {
     //   /**
