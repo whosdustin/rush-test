@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Pagination } from "svelte-ui";
+  import { Pagination } from "@dollop/ui";
 </script>
 
 <Meta

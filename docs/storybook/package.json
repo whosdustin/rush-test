@@ -22,7 +22,7 @@
     "svelte-loader": "^3.1.2"
   },
   "dependencies": {
-    "svelte-ui":"~1.0.0",
-    "@fortawesome/fontawesome-free": "~5.15.3"
+    "@fortawesome/fontawesome-free": "~5.15.3",
+    "@dollop/ui": "~0.1.0"
   }
 }

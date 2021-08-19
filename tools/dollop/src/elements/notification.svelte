@@ -1,11 +1,14 @@
 <script>
   import Delete from './delete.svelte'
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
   
   export let color
   export let is_light
 
-  $: modifiers = is(color).done()
+  $: modifiers = pipe(
+    is(color),
+    join(' ')
+  )([])
   $: class_list = `notification ${modifiers}`
 </script>
 <div

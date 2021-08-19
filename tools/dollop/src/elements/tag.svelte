@@ -1,6 +1,6 @@
 <script>
   import Delete from './delete.svelte'
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
 
   export let color
   export let size
@@ -8,7 +8,11 @@
   export let is_rounded
   export let has_delete
 
-  $: modifiers = is(size).is(color).done()
+  $: modifiers = pipe(
+    is(size),
+    is(color),
+    join(' ')
+  )([])
   $: class_list = `tag ${modifiers}`
 </script>
 

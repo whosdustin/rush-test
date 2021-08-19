@@ -2,7 +2,7 @@
   import NavBar from '$lib/ui/navbar.svelte'
   import ProgressBar from '$lib/ui/progress-bar.svelte'
   import { navigating } from '$app/stores'
-  // import 'svelte-ui/dist/svelte-ui.css'
+  import '@dollop/ui/dist/dollop.css'
 
   let loading = true
 

@@ -1,4 +1,5 @@
-import 'svelte-ui/dist/svelte-ui.css'
+import '@dollop/ui/dist/dollop.css'
+import '@fortawesome/fontawesome-free/js/all'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

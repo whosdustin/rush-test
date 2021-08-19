@@ -1,0 +1,34 @@
+{
+  "name": "@dollop/ui",
+  "version": "0.1.0",
+  "svelte": "src/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-css-only": "~3.1.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "~4.7.4",
+    "bulma": "~0.9.3",
+    "node-sass": "~6.0.1",
+    "postcss": "~8.3.6",
+    "ramda": "~0.27.1",
+    "rxjs": "~7.3.0",
+    "monaco-themes": "~0.3.3",
+    "monaco-editor": "~0.27.0",
+    "@monaco-editor/loader": "~1.1.1"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Story } from "@storybook/addon-svelte-csf";
-  import { Box } from "svelte-ui";
+  import { Box } from "@dollop/ui";
 </script>
 
 <Meta

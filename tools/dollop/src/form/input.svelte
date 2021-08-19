@@ -2,18 +2,20 @@
   import { onDestroy, createEventDispatcher } from "svelte";
   import { Subject } from "rxjs";
   import { debounceTime } from "rxjs/operators";
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
 
   const dispatch = createEventDispatcher()
 
+  export let id
   export let value = ''
   export let color
   export let size
-  export let rows
+  export let is_rounded
+  export let is_static
+  export let type = 'text'
   export let placeholder
   export let disabled = false
   export let readonly = false
-  export let has_fixed_size = false
   export let debounce = 750
 
   const state$ = new Subject().pipe(debounceTime(debounce))
@@ -23,15 +25,20 @@
     dispatch('input', value)
   })
 
-  $: modifiers = is(color).is(size).done()
-  $: class_list = `textarea ${modifiers}`
+  $: modifiers = pipe(
+    is(color),
+    is(size),
+    join(' ')
+  )([])
+  $: class_list = `input ${modifiers}`
 
   onDestroy(() => sub$.unsubscribe())
 </script>
 
-<textarea
+<input
   class={class_list}
-  class:has-fixed-size={has_fixed_size}
+  class:is-rounded={is_rounded}
+  class:is-static={is_static}
   on:keyup={event => state$.next(event)}
-  {value} {rows} {placeholder} {disabled} {readonly}
-></textarea>
+  {id} {value} {type} {placeholder} {disabled} {readonly}
+/>

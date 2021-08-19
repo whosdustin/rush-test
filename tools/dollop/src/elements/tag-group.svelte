@@ -1,10 +1,13 @@
 <script>
-import { are } from "../utils/helpers";
+import { are, pipe, join } from "../utils/helpers";
 
   export let size
   export let has_addons
 
-  $: modifiers = are(size).done()
+  $: modifiers = pipe(
+    are(size),
+    join(' ')
+  )([])
   $: class_list = `tags ${modifiers}`
 </script>
 

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Tag } from "svelte-ui";
+  import { Tag } from "@dollop/ui";
 </script>
 
 <Meta

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Radio, Control } from "svelte-ui";
+  import { Radio, Control } from "@dollop/ui";
 </script>
 
 <Meta

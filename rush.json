@@ -390,8 +390,8 @@
    */
   "projects": [
     {
-      "packageName": "svelte-ui",
-      "projectFolder": "tools/svelte-ui",
+      "packageName": "@dollop/ui",
+      "projectFolder": "tools/dollop",
       "reviewCategory": "shared"
     },
     {
@@ -401,10 +401,6 @@
     {
       "packageName": "svelte-kit-blog",
       "projectFolder": "apps/svelte-kit-blog"
-    },
-    {
-      "packageName": "nest-test",
-      "projectFolder": "servers/nest-test"
     }
     // {
     //   /**

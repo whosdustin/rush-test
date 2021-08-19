@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Image } from "svelte-ui";
+  import { Image } from "@dollop/ui";
 </script>
 
 <Meta

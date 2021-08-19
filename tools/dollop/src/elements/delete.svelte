@@ -1,10 +1,13 @@
 <script>
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
 
   export let size
   export let label
 
-  $: modifiers = is(size).done()
+  $: modifiers = pipe(
+    is(size),
+    join(' ')
+  )([])
   $: class_list = `delete ${modifiers}`
 </script>
 

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Checkbox } from "svelte-ui";
+  import { Checkbox } from "@dollop/ui";
 </script>
 
 <Meta

@@ -1,6 +1,6 @@
 <script>
   import { Meta, Template, Story } from "@storybook/addon-svelte-csf";
-  import { Button } from "svelte-ui";
+  import { Button } from '@dollop/ui';
 </script>
 
 <Meta
@@ -41,7 +41,7 @@
 />
 
 <Template let:args>
-  <Button {...args} on:click={args.click} />
+  <Button {...args} on:click={args.click}>{args.label}</Button>
 </Template>
 
 <Story

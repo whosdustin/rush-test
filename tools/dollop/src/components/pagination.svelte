@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  import { is } from '../utils/helpers';
+  import { is, pipe, join } from '../utils/helpers';
 
   const dispatch = createEventDispatcher()
 
@@ -10,7 +10,10 @@
   export let is_rounded = false
 
   $: pages = Array.from({ length }, (_, i) => ++i)
-  $: modifiers = is(size).done()
+  $: modifiers = pipe(
+    is(size),
+    join(' ')
+  )([])
   $: class_list = `pagination ${modifiers}`
 
   function previous() {

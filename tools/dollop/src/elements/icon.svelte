@@ -1,11 +1,15 @@
 <script>
-  import { has } from '../utils/helpers'
+  import { has, is, pipe, join } from '../utils/helpers'
 
   export let name
   export let color
   export let size
 
-  $: modifiers = has(color, 'text').is(size).done()
+  $: modifiers = pipe(
+    has('text', color),
+    is(size),
+    join(' ')
+  )([])
   $: class_list = `icon ${modifiers}`
 </script>
 

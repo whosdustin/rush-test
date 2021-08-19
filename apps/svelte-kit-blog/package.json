@@ -30,6 +30,6 @@
     "graphql-request": "^3.4.0",
     "html-entities": "^2.3.2",
     "slugify": "^1.5.3",
-    "svelte-ui":"~1.0.0"
+    "@dollop/ui":"~0.1.0"
   }
 }

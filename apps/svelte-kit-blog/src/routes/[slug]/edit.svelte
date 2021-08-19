@@ -17,9 +17,9 @@
 
 <script>
   import PostForm from '$lib/ui/post-form.svelte'
-  import { Button } from 'svelte-ui'
   import { update } from '$lib/services/posts'
   import { goto } from '$app/navigation'
+  import { Button } from '@dollop/ui'
   
   export let post
   

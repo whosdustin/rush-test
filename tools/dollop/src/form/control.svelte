@@ -1,10 +1,14 @@
 <script>
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
 
   export let size
   export let loading
 
-  $: modifiers = is(size).is(loading).done()
+  $: modifiers = pipe(
+    is(size),
+    is(loading),
+    join(' ')
+  )([])
   $: class_list = `control ${modifiers}`
 </script>
 

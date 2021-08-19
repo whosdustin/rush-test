@@ -1,13 +1,17 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { is } from "../utils/helpers";
+  import { is, pipe, join } from "../utils/helpers";
 
   const dispatch = createEventDispatcher()
 
   export let color
   export let size
 
-  $: modifiers = is(size).is(color).done()
+  $: modifiers = pipe(
+    is(size),
+    is(color),
+    join(' ')
+  )([])
   $: class_list = `message ${modifiers}`
 </script>
 

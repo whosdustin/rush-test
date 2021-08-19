@@ -1,6 +1,6 @@
 <script>
   import { Meta, Story } from "@storybook/addon-svelte-csf";
-  import { Level, LevelItem } from "svelte-ui";
+  import { Level, LevelItem } from "@dollop/ui";
 </script>
 
 <Meta
